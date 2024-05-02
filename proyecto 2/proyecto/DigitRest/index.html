@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitRest</title>
+    <link rel="stylesheet" href="./vista/css/bootstrap.css">
+    <link rel="stylesheet" href="./vista/css/estilos.css">
+</head>
+<body>
+    <div id="contenedor">
+
+        <div id ="encabezado">
+            <!-- imagenes de fondo -->
+            <div class="img-fondo" id="fondo-1"> <img src="./vista/img/fondo1.png" alt="fondo"></div>
+            <div class="img-fondo" id="fondo-2"> <img src="./vista/img/fondo2.png" alt="fondo"></div>
+            <!-- imagenes de fondo -->
+            <div class="text-emcabezado"></div>
+            <div id="area-btn-regreso"></div>
+        </div>
+
+        <div id = "contenido">
+            <!--Area de plantillas -->
+            <div class="titulo-contenido"></div>
+            <div class="contenido-form">
+
+                <div class="ingreso-dinero" style="width: 30rem; margin-top: 12%;">
+                    <div class="card-body">
+                        <div class="texto-numero-pedido">Ingrese el numero del pedido</div>
+                        <div class="ingreso-numero-pedido">
+                            <textarea placeholder="__ __ __ __ __ __ __ __ __ __" class="form-control" id="valor-pagar" rows="3"></textarea>
+                        </div>
+                        <div class="texto-valor-pedido">Ingrese el valor a apagar por el cliente</div>
+                        <div class="ingreso-valor-pedido">
+                            <textarea placeholder="$_ __ __ __ __ __ __ __ __ __" class="form-control" id="valor-pagar" rows="3"></textarea>
+                        </div>
+                        <div class="ingreso-valor-dinero">
+                            <div class="texto-ingreso">INGRESA</div>
+                            <textarea placeholder="$_ __ __ __ __ __ __ __ __ __" class="form-control" id="valor-pagar" rows="3"></textarea>
+                        </div>
+                        <div class="ver-dinero-devolver">
+                            <div class="texto-ingreso">DEVUELVE</div>
+                            <textarea placeholder="$_ __ __ __ __ __ __ __ __ __" class="form-control" id="valor-pagar" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="pieImagen">
+            <div class="img-fondo" id="fondo-3"><img src="./vista/img/fondo3.png" alt="fondo"></div>
+            <div id="area-btn-pie"></div>
+            <!-- fin imagenes de fondo -->
+        </div>
+    </div>
+    
+    
+    <!--Plantillas-->
+    
+    <!--plantilla de botones encabezado regreso-->
+
+    <template>
+        <button type="button" class="btn btn-regreso"><img src="./vista/img/regreso.png"></button>
+    </template>
+    <template>
+        <div class="texto-variado"></div>
+    </template>
+
+    <!--plantilla de botones pie de pagina plantilla 4-->
+    <template id="btn-pie-pagina"> 
+        <div class="pedidos" id="agregar-plato">
+            <button type="button" class="btn btn-agregar-plato">agregar otro plato</button>
+        </div>
+        <div class="pedidos" id="mirar-pedido">
+            <button type="button" class="btn btn-mirar-pedido">mirar pedido</button>
+        </div>
+    </template>
+
+        <!--plantilla de botones pie de pagina plantilla 5 -->
+    <template>
+        <div class="pedidos" id="confirmar-pedido">
+            <button type="button" class="btn btn-confirmar-pedido">CONFIRMAR PEDIDO</button>
+        </div>
+    </template>
+        <!--plantilla de botones pie de pagina plantilla 8 -->
+    <template>
+        <div class="preparado-cocinero" id="listo-pedido">
+            <button type="button" class="btn btn-preparado-cocinero">PREPARADO</button>
+        </div>
+    </template>
+        <!--plantilla de botones pie de pagina plantilla 14 -->
+    <template>
+        <div class="agregar-usuario" id="usuario-nuevo">
+            <button type="button" class="btn btn-agregar-usuario">AGREGAR</button>
+        </div>
+    </template>
+        <!--plantilla de botones pie de pagina plantilla 15 -->
+    <template>
+        <div class="modificar-usuario" id="usuario-existente">
+            <button type="button" class="btn btn-modificar-usuario">MODIFICAR</button>
+        </div>
+    </template>
+        <!--plantilla de botones pie de pagina plantilla 16 -->
+    <template>
+        <div class="ingresos-pedidos" id="listo-pedido">
+            <button type="button" class="btn btn-ingresos-pedidos">CONTINUAR</button>
+        </div>
+    </template>
+
+
+    <!--pantalla 1-->
+    <template id="template-form-ingreso">
+        <div class="contenido-form">
+            <div class="titulo-form">
+                DIGIT REST
+            </div>
+            <div class="mb-3">
+                <label for="correo" class="form-label">Ingrese el correo</label>
+                <input type="email" class="form-control" id="correo" name="correoUsuario" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" name="contraseña" class="form-control">
+            </div>
+            <div class="mb-3">
+                <button type="button" class="btn btn-form">Ingresar</button>
+            </div>
+            <div class="mb-3">
+                <button type="button" class="btn btn-form" onclick="mostrarFormRegistro()">Registrarse</button>
+            </div>
+        </div>
+    </template>
+    <!--pantalla 2-->
+    <template id="template-form-registro">
+        <div class="contenido-form">
+                
+            <div class="titulo-form">
+                DIGIT REST
+            </div>
+            <div class="mb-3">
+                <label for="correo" class="form-label">Ingrese su nombre</label>
+                <input class="form-control" type="text" name="nombreUsuario" aria-label="default input example">
+            </div>
+            <div class="mb-3">
+                <label for="correo" class="form-label">Ingrese su correo</label>
+                <input type="email" class="form-control" id="correo" name="correoUsuario">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">contraseña</label>
+                <input type="password" id="password" name="contraseña" class="form-control">
+            </div>
+            <div class="mb-3">
+                <button type="button" class="btn btn-form" >Registrarse</button>
+            </div>
+        </div>
+    </template>
+    <!--pantalla 3-->
+    <template id="template-menu">
+        <div class="menu">
+            <div class="menu-platos">
+                <img src="./vista/img/plato-pedido.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Nombre</h5>
+                </div>
+            </div>
+            <div class="menu-platos">
+                <img src="./vista/img/plato-pedido.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Nombre</h5>
+                </div>
+            </div>
+            <div class="menu-platos">
+                <img src="./vista/img/plato-pedido.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Nombre</h5>
+                </div>
+            </div>
+            <div class="menu-platos">
+                <img src="./vista/img/plato-pedido.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Nombre</h5>
+                </div>
+            </div>
+            <div class="menu-platos">
+                <img src="./vista/img/plato-pedido.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Nombre</h5>
+                </div>
+            </div>
+            <div class="menu-platos">
+                <img src="./vista/img/plato-pedido.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Nombre</h5>
+                </div>
+            </div>
+        </div>
+    </template>
+    <!--pantalla 4-->
+    <template id="plato">
+        <div class="contenido-form">
+            <div class="platos">
+                <div class="ver-plato" style="width: 74%;">
+                    <div class="nombre-plato">NOMBRE</div>
+                    <img src="./vista/img/plato.png" style="padding-bottom: 25%;" class="card-img-top" alt="...">
+                    <textarea class="form-control" id="descripcion" rows="3" disabled readonly>DESCRIPCION:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</textarea>
+                    <div class="personalizacion-plato">
+                        <textarea placeholder="ingrese su personalizacion:" class="form-control" id="personalizacion" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="precio">$__________________</div>
+                <select class="cantidad" aria-label="Small select example">
+                    <option selected>cantidad: </option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+        </div>
+    </template>  
+    <!--pantalla 5-->
+    <template id="confirmar-pedido ">
+        <div class="pedido">
+            <div class="caract-plato" style="width: 100%">
+                <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="./vista/img/plato-pedido.png" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="descripcion-estado">
+                    <div class="datos-plato">
+                    <h5 class="card-title">nombre</h5>
+                    <h5 class="card-title">precio</h5>
+                    <h5 class="card-title">cantidad</h5>
+                    </div>
+                </div>
+                </div>
+            </div><div class="caract-plato" style="width: 100%">
+                <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="./vista/img/plato-pedido.png" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="descripcion-estado">
+                    <div class="datos-plato">
+                    <h5 class="card-title">nombre</h5>
+                    <h5 class="card-title">precio</h5>
+                    <h5 class="card-title">cantidad</h5>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="caract-plato" style="width: 100%">
+                <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="./vista/img/plato-pedido.png" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="descripcion-estado">
+                    <div class="datos-plato">
+                    <h5 class="card-title">nombre</h5>
+                    <h5 class="card-title">precio</h5>
+                    <h5 class="card-title">cantidad</h5>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="caract-plato" style="width: 100%">
+                <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="./vista/img/plato-pedido.png" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="descripcion-estado">
+                    <div class="datos-plato">
+                    <h5 class="card-title">nombre</h5>
+                    <h5 class="card-title">precio</h5>
+                    <h5 class="card-title">cantidad</h5>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="caract-plato" style="width: 100%">
+                <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="./vista/img/plato-pedido.png" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="descripcion-estado">
+                    <div class="datos-plato">
+                    <h5 class="card-title">nombre</h5>
+                    <h5 class="card-title">precio</h5>
+                    <h5 class="card-title">cantidad</h5>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="caract-plato" style="width: 100%">
+                <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="./vista/img/plato-pedido.png" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="descripcion-estado">
+                    <div class="datos-plato">
+                    <h5 class="card-title">nombre</h5>
+                    <h5 class="card-title">precio</h5>
+                    <h5 class="card-title">cantidad</h5>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="precio-pedido">TOTAL: $___________________</div>
+    </template>
+     <!--pantalla 6-->
+    <template id="opinion">
+        <div class="contenido-form">
+            <div class="caja-opinion">
+                <label for="opinion-cliente" class="opinion" id="agradecimiento">Gracias por tu compra. tu pedido llegara pronto a la mesa</label>
+                <textarea placeholder="Dejanos tu opinion..." class="form-control" id="opinion-cliente" rows="3"></textarea>
+            </div>
+            <div class="pedidos" id="enviar-opinion">
+                <button type="button" class="btn btn-enviar-opinion">ENVIAR</button>
+            </div>
+            <div class="redes-sociales"><img src="./vista/img/redes sociales.png" alt="redes"></div>
+            <button type="button" class="btn btn-whatsapp">(313)546 2023</button>
+            <button type="button" class="btn btn-facebook">Digit Rest</button>
+            <button type="button" class="btn btn-instagram">Digit Rest</button>
+        </div>
+    </template>
+     <!--pantalla 7-->
+    <template id="pedidos-cocinero">
+        <div class="contenido-form">
+            <div class="img-plato-cocinero" id="plato-cocinero-1"> <img src="./vista/img/plato-pedido.png" alt="fondo"></div>
+            <div class="pedido-numero" id="plato-1-cocinero">
+                <button type="button" class="btn btn-pedido-cocinero">Pedido #</button>
+            </div>
+            <div class="img-plato-cocinero" id="plato-cocinero-2"> <img src="./vista/img/plato-pedido.png" alt="fondo"></div>
+             <div class="pedido-numero" id="plato-2-cocinero">
+                <button type="button" class="btn btn-pedido-cocinero">Pedido #</button>
+            </div>
+            <div class="img-plato-cocinero" id="plato-cocinero-3"> <img src="./vista/img/plato-pedido.png" alt="fondo"></div>
+            <div class="pedido-numero" id="plato-3-cocinero">
+                <button type="button" class="btn btn-pedido-cocinero">Pedido #</button>
+            </div>
+            <div class="img-plato-cocinero" id="plato-cocinero-4"> <img src="./vista/img/plato-pedido.png" alt="fondo"></div>
+            <div class="pedido-numero" id="plato-4-cocinero">
+                <button type="button" class="btn btn-pedido-cocinero">Pedido #</button>
+            </div>
+        </div>
+    </template>
+    <!--pantalla 8-->
+    <template id="platos-pedido">
+        <div class="lista-productos">
+            <div class="plato-pedido">
+                <img src="./vista/img/plato-pedido.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Nombre</h5>
+                <h5 class="card-title">Cantidad</h5>
+                <h5 class="card-title">Personalizacion</h5>
+                </div>
+            </div>
+            <div class="plato-pedido">
+                <img src="./vista/img/plato-pedido.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Nombre</h5>
+                <h5 class="card-title">Cantidad</h5>
+                <h5 class="card-title">Personalizacion</h5>
+                </div>
+            </div>
+            <div class="plato-pedido">
+                <img src="./vista/img/plato-pedido.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Nombre</h5>
+                <h5 class="card-title">Cantidad</h5>
+                <h5 class="card-title">Personalizacion</h5>
+                </div>
+            </div>
+            <div class="plato-pedido">
+                <img src="./vista/img/plato-pedido.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Nombre</h5>
+                <h5 class="card-title">Cantidad</h5>
+                <h5 class="card-title">Personalizacion</h5>
+                </div>
+            </div>
+            <div class="plato-pedido">
+                <img src="./vista/img/plato-pedido.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Nombre</h5>
+                <h5 class="card-title">Cantidad</h5>
+                <h5 class="card-title">Personalizacion</h5>
+                </div>
+            </div>
+            <div class="plato-pedido">
+                <img src="./vista/img/plato-pedido.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Nombre</h5>
+                <h5 class="card-title">Cantidad</h5>
+                <h5 class="card-title">Personalizacion</h5>
+                </div>
+            </div>
+        </div>
+    </template>
+    <!--pantalla 9-->
+    <template id="preparacion-pedido">
+        <div class="estado-pedido">
+            <div class="card mb-3" style="width: 100%">
+                <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="./vista/img/plato-pedido.png" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="descripcion-estado">
+                    <div class="card-body">
+                    <h5 class="card-title">Pedido #</h5>
+                    <h5 class="card-title">Mesa #</h5>
+                    <h5 class="card-title">LISTO</h5>
+                    <button type="button" class="btn btn-estado-pedido">ENTREGADO</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="card mb-3" style="width: 100%">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="./vista/img/plato-pedido.png" class="img-fluid rounded-start" alt="...">
+                    </div>
+                <div class="descripcion-estado">
+                    <div class="card-body">
+                        <h5 class="card-title">Pedido #</h5>
+                        <h5 class="card-title">Mesa #</h5>
+                        <h5 class="card-title">EN PROCESO</h5>
+                        <button type="button" class="btn btn-estado-pedido"></button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="card mb-3" style="width: 100%">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="./vista/img/plato-pedido.png" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="descripcion-estado">
+                    <div class="card-body">
+                        <h5 class="card-title">Pedido #</h5>
+                    <h5 class="card-title">Mesa #</h5>
+                    <h5 class="card-title">LISTO</h5>
+                    <button type="button" class="btn btn-estado-pedido">ENTREGADO</button>
+                </div>
+            </div>
+                </div>
+            </div>
+            <div class="card mb-3" style="width: 100%">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                    <img src="./vista/img/plato-pedido.png" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="descripcion-estado">
+                    <div class="card-body">
+                        <h5 class="card-title">Pedido #</h5>
+                        <h5 class="card-title">Mesa #</h5>
+                        <h5 class="card-title">EN PROCESO</h5>
+                        <button type="button" class="btn btn-estado-pedido"></button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </template>
+    <!--pantalla 10-->
+    <template id="opciones-administrador">
+        <div class="opciones-administrador" >
+            <div class="card-body">
+                <div class="seleccion-accion">SELECCIONE LA OPCION QUE DESEA REALIZAR</div>
+              <a href="#" class="btn btn-accion">ACTUALIZAR MENU</a>
+              <a href="#" class="btn btn-accion">ASIGNAR ROLES</a>
+              <a href="#" class="btn btn-accion">RECIBIR PAGO</a>
+            </div>
+        </div>
+    </template>
+    <!--pantalla 11-->
+    <template id="actualizacion-menu">
+        <div class="menu">
+            <div class="actualizacion-menu">
+                <img src="./vista/img/plato-pedido.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <button type="button" class="btn btn-actualizar">NOMBRE</button>
+                </div>
+            </div>
+            <div class="actualizacion-menu">
+                <img src="./vista/img/plato-pedido.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                <button type="button" class="btn btn-actualizar">NOMBRE</button>
+            </div>
+            </div>
+            <div class="actualizacion-menu">
+                <img src="./vista/img/plato-pedido.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <button type="button" class="btn btn-actualizar">NOMBRE</button>
+                </div>
+            </div>
+            <div class="actualizacion-menu">
+                <img src="./vista/img/plato-pedido.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                <button type="button" class="btn btn-actualizar">NOMBRE</button>
+            </div>
+            </div>
+            <div class="actualizacion-menu">
+                <img src="./vista/img/plato-pedido.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <button type="button" class="btn btn-actualizar">NOMBRE</button>
+                </div>
+            </div>
+            <div class="actualizacion-menu">
+                <img src="./vista/img/plato-pedido.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <button type="button" class="btn btn-actualizar">NUEVO PLATO</button>
+                </div>
+            </div>
+        </div>
+    </template>
+    <!--pantalla 12-->
+    <template id="actualizacion-plato">
+        <div class="contenido-form">
+            <div class="platos">
+                <div class="ver-plato" style="width: 74%;">
+                    <input class="actualizar-nombre-plato" type="text" placeholder="Default input" aria-label="default input example">
+                    <img src="./vista/img/plato.png" style="padding-bottom: 25%;" class="card-img-top" alt="...">
+                    <input class="actualizar-texto-descripcion" type="text" placeholder="Default input" aria-label="default input example">
+                    <textarea class="actualizar-descripcion-plato" rows="3">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</textarea>
+                </div>
+            <input class="actualizar-precio" type="text" placeholder="Default input" aria-label="default input example">   
+            <button type="button" class="btn btn-actualizar-plato">ACTUALIZAR</button>               
+        </div>
+        </div>
+    </template>
+    <!--pantalla 13-->
+    <template id="lista-usuarios">
+        <div class="lista-usuarios">Lista de usuarios</div>
+        <div>SELECCIONE EL USUARIO QUE DESEA MODIFICAR</div>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col">NOMBRE</th>
+                    <th scope="col">CORREO</th>
+                    <th scope="col">ROL</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>XXXXXXXXXX</td>
+                    <td>XXXXXXXXXX</td>
+                    <td>XXXXXXXXXX</td>
+                </tr>
+                <tr>
+                    <td>XXXXXXXXXX</td>
+                    <td>XXXXXXXXXX</td>
+                    <td>XXXXXXXXXX</td>
+                </tr>
+                <tr>
+                    <td>XXXXXXXXXX</td>
+                    <td>XXXXXXXXXX</td>
+                    <td>XXXXXXXXXX</td>
+                </tr>
+                <tr>
+                    <td>XXXXXXXXXX</td>
+                    <td>XXXXXXXXXX</td>
+                    <td>XXXXXXXXXX</td>
+                </tr>
+                <tr>
+                    <td>XXXXXXXXXX</td>
+                    <td>XXXXXXXXXX</td>
+                    <td>XXXXXXXXXX</td>
+                </tr>
+                <tr>
+                    <td>XXXXXXXXXX</td>
+                    <td>XXXXXXXXXX</td>
+                    <td>XXXXXXXXXX</td>
+                </tr>
+                <tr>
+                    <td colspan="3">AGREGAR NUEVO USUARIO +</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </template>
+    <!--pantalla 14-->
+    <template id="agregar-usuario">
+        <div class="nombre-usuario">NOMBRE USUARIO</div>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col">CORREO ELECTRONICO</th>
+                    <th scope="col">CONTRASEÑA</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div>SELECCIONE EL ROL QUE DESEA ASIGNARLE</div>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <td>ROLES</td>
+                </tr>
+                <tr>
+                    <td>MESERO</td>
+                </tr>
+                <tr>
+                    <td>COCINERO</td>
+                </tr>
+                <tr>
+                    <td>ADMINISTRADOR</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </template>
+    <!--pantalla 15-->
+    <template id="modificar-usuario">
+        <div class="modificar-usuario">NOMBRE USUARIO</div>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col">ROL ACTUAL</th>
+                    <th scope="col">CORREO ELECTRONICO</th>
+                    <th scope="col">CONTRASEÑA</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div>SELECCIONE EL ROL QUE DESEA ASIGNARLE</div>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <td>ROLES</td>
+                </tr>
+                <tr>
+                    <td>MESERO</td>
+                </tr>
+                <tr>
+                    <td>COCINERO</td>
+                </tr>
+                <tr>
+                    <td>ADMINISTRADOR</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </template>
+    <!--pantalla 16-->
+    <template id="ingresos-pedidos">
+        <div class="ingreso-dinero" style="width: 30rem; margin-top: 12%;">
+            <div class="card-body">
+                <div class="texto-numero-pedido">Ingrese el numero del pedido</div>
+                <div class="ingreso-numero-pedido">
+                    <textarea placeholder="__ __ __ __ __ __ __ __ __ __" class="form-control" id="valor-pagar" rows="3"></textarea>
+                </div>
+                <div class="texto-valor-pedido">Ingrese el valor a apagar por el cliente</div>
+                <div class="ingreso-valor-pedido">
+                    <textarea placeholder="$_ __ __ __ __ __ __ __ __ __" class="form-control" id="valor-pagar" rows="3"></textarea>
+                </div>
+                <div class="ingreso-valor-dinero">
+                    <div class="texto-ingreso">INGRESA</div>
+                    <textarea placeholder="$_ __ __ __ __ __ __ __ __ __" class="form-control" id="valor-pagar" rows="3"></textarea>
+                </div>
+                <div class="ver-dinero-devolver">
+                    <div class="texto-ingreso">DEVUELVE</div>
+                    <textarea placeholder="$_ __ __ __ __ __ __ __ __ __" class="form-control" id="valor-pagar" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+    </template>
+    <!--fin da las pantallas-->
+    <script src="./vista/js/vista.js"></script>
+    <script src="./controlador/controlador.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,779 @@
+/**
+Hoja de estilos para el proyecto 
+autores:
+*/
+
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: rgb(226, 225, 225);
+}
+
+
+#contenedor{
+    height: 100vh;
+    width: 540px;
+    background-color: white;
+    margin: auto;
+    position: relative;
+}
+
+#encabezado{
+    height: 15vh;
+    
+}
+
+#contenido{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 70vh;
+}
+
+#pieImagen{
+    height: 15vh;
+}
+
+.contenido-form{
+    margin: auto;
+}
+
+.titulo-contenido{
+    font-size: 50px;
+}
+/*------------------plantilla 1/2------------------------------*/
+.titulo-form{
+    color: #715cf8;
+    text-align: center;
+    margin: auto;
+    font-size: 3.5em;
+    font-weight: bold;
+}
+
+.mb-3{
+    padding: 10px 1px;
+}
+
+.mb-3>label{
+    color: gray;
+}
+
+.mb-3>input{
+    border: solid 3px black;
+    border-radius: 20px;
+}
+
+.btn-form{
+    background-color: #715cf8;
+    width: 70%;
+    border-radius: 20px;
+    margin-left: 15%;
+    color: white;
+    font-weight: bold;
+}
+
+.img-fondo{
+    position: absolute;
+}
+
+#fondo-1{
+    top: 0%;
+    left: 0%;
+    z-index: 1;
+}
+
+#fondo-2{
+    top: 1%;
+    right: 2.5%;
+    z-index: 1;
+}
+
+#fondo-3{
+    bottom: 0%;
+    left: 20%;
+    z-index: 1;
+}
+/*------------------fin plantilla------------------------------*/
+
+/*------------------plantilla 3------------------------------*/
+h5{
+    position: relative;
+    left: 34%;
+}
+
+.menu-platos{
+    width: 48%;
+    margin: 15px 4px;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 5px;
+    overflow-x: hidden;
+    max-height: 63vh;
+}
+/*------------------fin plantilla------------------------------*/
+
+/*------------------Plantilla 4 ------------------------------*/
+
+#platos{
+    top: 30%;
+}
+
+.nombre-plato{
+    position: relative;
+    left: 20%;
+    background-color: #715cf8;
+    border-radius: 20px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 30px;
+    width: 60%;
+    margin-bottom: 15%;
+    text-align: center;
+    top: 25%;
+}
+
+.precio{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#personalizacion{
+    background-color:#DA57B3;
+}
+
+.personalizacion-plato{
+    color: #000000;
+    font-weight: bold;
+    font-size: 15px;
+    width: 100%;
+    top: 150%;
+    padding: 1% 0%;
+}
+
+.ver-plato{
+    position: absolute;
+    top: 20%;
+    left: 13%;
+}
+.ver-plato>textarea{
+    width: 100%;
+    resize: none;
+    white-space: pre-line;
+}
+
+#descripcion{
+    background-color: #DA57B3;
+    border-radius: 10px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 15px;
+    width: 100%;
+    top: 20%;
+    padding: 2% 2% 2%;
+}
+.cantidad{
+    top: 80%;
+    left: 40%;
+    position: absolute;
+    border-color:#DA57B3;
+    width: 20%;
+    font-weight: bold;
+}
+
+.pedidos{
+    margin-left: 26%;
+}
+
+.btn-agregar-plato{
+    background-color:#715cf8;
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+    bottom: 10%;
+    z-index: 10;
+    position: absolute;
+    width: 50%;
+    border: 0.5px solid black;
+}
+
+.btn-mirar-pedido{
+    background-color:#715cf8;
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+    bottom: 5%;
+    z-index: 10;
+    position: absolute;
+    width: 50%;
+    border: 0.5px solid black;
+}
+
+.btn-regreso{
+    color: #000000;
+    z-index: 10;
+    position: absolute;
+    top: 2%;
+    left: 3%;
+}
+
+/*------------------fin plantilla------------------------------*/
+
+/*------------------Plantilla 5 ------------------------------*/
+
+.card-title{
+    font-weight: bold;
+}
+.caract-plato{
+    margin-left: 20%;
+    padding: 0px 0px 15px 0px;
+}
+.pedido{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 50px;
+    overflow-x: hidden;
+    position: absolute;
+    top: 15.75%;
+    max-height: 63vh;
+    left: 0;
+}
+
+.precio-pedido{
+    position: absolute;
+    bottom: 17%;
+    margin-left: -27% ;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    border: 5px solid rgb(218, 218, 218);
+    width: 55%;
+    text-align: center;
+}
+
+.btn-confirmar-pedido{
+    background-color:#715cf8;
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+    bottom: 5%;
+    z-index: 10;
+    position: absolute;
+    width: 50%;
+    border: 0.5px solid black;
+}
+/*------------------fin plantilla------------------------------*/
+
+/*------------------Plantilla 6 ------------------------------*/
+
+#agradecimiento{
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+}
+
+.caja-opinion{
+    position: absolute;
+    width: 80%;
+    top: 25%;
+    left: 10%;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-enviar-opinion{
+    position: absolute;
+    background-color: #715cf8;
+    border-radius: 20px;
+    width: 20%;
+    right: 39%;
+    top: 45%;
+    text-align: center;
+    font-weight: bold;
+    align-items: center;
+}
+
+.redes-sociales{
+    position: absolute;
+    top: 55%;
+    right: 70%;
+}
+
+.btn-whatsapp{
+    position: absolute;
+    background-color:black;
+    color: white;
+    border-radius: 50px;
+    width: 50%;
+    right: 15%;
+    top: 56.75%;
+    text-align: center;
+    font-weight: bold;
+    align-items: center;
+}
+
+.btn-facebook{
+    position: absolute;
+    background-color:black;
+    color: white;
+    border-radius: 50px;
+    width: 50%;
+    right: 15%;
+    top: 65%;
+    text-align: center;
+    font-weight: bold;
+    align-items: center;
+}
+
+.btn-instagram{
+    position: absolute;
+    background-color:black;
+    color: white;
+    border-radius: 50px;
+    width: 50%;
+    right: 15%;
+    top: 73.25%;
+    text-align: center;
+    font-weight: bold;
+    align-items: center;
+}
+
+/*------------------fin plantilla------------------------------*/
+
+/*------------------Plantilla 7 ------------------------------*/
+.img-plato-cocinero{
+    position: absolute;
+    margin-left: -35%;
+}
+
+#plato-cocinero-1{
+    top: 18%;
+}
+#plato-cocinero-2{
+    top: 35%;
+}
+#plato-cocinero-3{
+    top: 52%;
+}
+#plato-cocinero-4{
+    top: 69%;
+}
+
+.btn-pedido-cocinero{
+    left: 50%;
+    font-weight: bold;
+    background-color:#715cf8;
+    color: black;
+    border-radius: 50px;
+    width: 150%;
+}
+
+
+.pedido-numero{
+    position: absolute;
+}
+#plato-1-cocinero{
+    top: 23%;
+}
+#plato-2-cocinero{
+    top: 40%;
+}
+#plato-3-cocinero{
+    top: 57%;
+}
+#plato-4-cocinero{
+    top: 74%;
+}
+
+/*------------------fin plantilla------------------------------*/
+
+/*------------------Plantilla 8------------------------------*/
+
+.lista-productos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 5px;
+    overflow-x: hidden;
+    max-height: 70vh;
+}
+
+.plato-pedido{
+    width: 44.5%;
+    margin: 4px;
+}
+
+.btn-preparado-cocinero{
+    position: absolute;
+    background-color:#715cf8;
+    border-radius: 25px;
+    font-weight: bold;
+    top: 90%;
+    left: 29%;
+    z-index: 2;
+    width: 45%;
+    height: 5%;
+    color: #000000;
+    border: 0.5px solid black;
+}
+
+/*------------------fin plantilla------------------------------*/
+
+/*------------------Plantilla 8------------------------------*/
+
+.btn-estado-pedido{
+    position: absolute;
+    left: 65%;
+    top: 40%;
+    background-color: #715cf8;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.datos-plato{
+    font-weight: bold;
+    margin-top: 15%;
+}
+
+.descripcion-estado{
+    margin-left: 0%;
+    width: 41%;
+    max-width: 100%;
+}
+
+.estado-pedido{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 50px;
+    overflow-x: hidden;
+    max-height: 69vh;
+}
+
+
+/*-----------------------pantalla 9-----------------*/
+.ingreso-nombre-plato{
+    position: relative;
+    left: 20%;
+    background-color: #715cf8;
+    border-radius: 20px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 30px;
+    width: 60%;
+    margin-bottom: 15%;
+    text-align: center;
+    top: 25%;
+}
+
+.btn-ingresar-plato{
+    background-color:#715cf8;
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+    bottom: 10%;
+    z-index: 10;
+    position: absolute;
+    width: 50%;
+    border: 0.5px solid black;
+}
+
+/*-------------------------pantalla 10---------------------------*/
+
+.seleccion-accion{
+    width: 100%;
+    margin-left: 10%;
+    margin-top: -75%;
+    padding-bottom: 40%;
+    font-weight: bold;
+}
+
+.btn-accion{
+    position: relative;
+    background-color: #715cf8;
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+    width: 70%;
+    left: 17.75%;
+    border: 0.5px solid black;
+    margin-bottom: 32%;
+    top: -18%;
+}
+.opciones-administrador{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 50px;
+    position: absolute;
+    left: -8px;
+}
+
+/*-------------------------pantalla 11---------------------------*/
+
+.actualizacion-menu{
+    width: 48%;
+    margin: 15px 4px;
+}
+
+.btn-actualizar{
+    background-color: #715cf8;
+    width: 70%;
+    border-radius: 20px;
+    margin-left: 15%;
+    color: black;
+    font-weight: bold;
+}
+
+
+/*-------------------------pantalla 12---------------------------*/
+.actualizar-nombre-plato{
+    position: relative;
+    left: 20%;
+    background-color: #715cf8;
+    border-radius: 20px;
+    font-size: 30px;
+    width: 60%;
+    margin-bottom: 10%;
+    text-align: center;
+    margin-top: -4%;
+    line-height: normal;
+}
+
+.actualizar-texto-descripcion{
+    position: relative;
+    left: 20%;
+    background-color: #715cf8;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 30px;
+    width: 60%;
+    margin-bottom: 15%;
+    text-align: center;
+    line-height: normal;
+    margin-top: 7%;
+}
+
+.actualizar-descripcion-plato{
+    background-color: #DA57B3;
+    border-radius: 10px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 15px;
+    width: 100%;
+    top: 20%;
+    padding: 2% 2% 2%;
+}
+
+.actualizar-precio{
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    left: 20%;
+    color: #000000;
+    width: 60%;
+    text-align: center;
+    border-width: 0cap;
+    margin-top: -4%
+}
+
+.btn-actualizar-plato{
+    position: absolute;
+    background-color: #715cf8;
+    border-radius: 25px;
+    font-weight: bold;
+    top: 78%;
+    left: 29%;
+    z-index: 2;
+    width: 45%;
+    height: 5%;
+}
+
+/*-------------------------pantalla 13---------------------------*/
+.table-responsive{
+    font-weight: bold;
+    overflow-x: hidden;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.encabezado-usuarios{
+    position: relative;
+    left: 0%;
+    background-color: #715cf8;
+    border-radius: 20px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 30px;
+    width: 60%;
+    margin-bottom: 15%;
+    text-align: center;
+    top: 25%;
+    height: 6vh;
+    width: 400px;
+}
+
+/*-------------------------pantalla 14---------------------------*/
+.agregar-nombre-usuario{
+    position: relative;
+    left: 0%;
+    background-color: #715cf8;
+    border-radius: 20px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 30px;
+    width: 60%;
+    margin-bottom: 15%;
+    text-align: center;
+    top: 25%;
+    height: 6vh;
+    width: 400px;
+}
+
+.btn-agregar-usuario{
+    position: absolute;
+    background-color:#715cf8;
+    border-radius: 25px;
+    font-weight: bold;
+    top: 85%;
+    left: 20%;
+    z-index: 2;
+    width: 60%;
+    height: 5%;
+    color: #000000;
+    border: 0.5px solid black;
+}
+/*-------------------------pantalla 15---------------------------*/
+.nombre-modificar-usuario{
+    position: relative;
+    left: 6%;
+    background-color: #715cf8;
+    border-radius: 20px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 30px;
+    width: 60%;
+    margin-bottom: 15%;
+    text-align: center;
+    top: 25%;
+    height: 6vh;
+    width: 400px;
+}
+
+.btn-modificar-usuario{
+    position: absolute;
+    background-color:#715cf8;
+    border-radius: 25px;
+    font-weight: bold;
+    top: 85%;
+    left: 20%;
+    z-index: 2;
+    width: 60%;
+    height: 5%;
+    color: #000000;
+    border: 0.5px solid black;
+}
+/*-------------------------pantalla 16---------------------------*/
+
+.texto-numero-pedido{
+    background-color: #715cf8;
+    border-radius: 20px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    padding: 0% 0% 0% 0%;
+}
+
+.texto-valor-pedido{
+    background-color: #715cf8;
+    border-radius: 20px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+
+#valor-pagar{
+    background-color:#D9D9D9;
+    text-align: center;
+    position: relative;
+    color: #000000;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 20px;
+    padding: 3%;
+    overflow-y: hidden;
+    height: 15px;
+}
+
+.ingreso-numero-pedido{
+    position: relative;
+    color: #000000;
+    font-weight: bold;
+    font-size: 15px;
+    width: 100%;
+    top: 150%;
+    padding: 5% 27.5% 10% 27.5%;
+}
+
+.ingreso-valor-pedido{
+    position: relative;
+    color: #000000;
+    font-weight: bold;
+    font-size: 15px;
+    width: 100%;
+    top: 150%;
+    padding: 5% 27.5% 10% 27.5%;
+}
+
+.ingreso-valor-dinero{
+    position: relative;
+    color: #000000;
+    font-weight: bold;
+    font-size: 15px;
+    width: 100%;
+    top: 150%;
+    padding: 0% 20% 15% 20%;
+}
+
+.ver-dinero-devolver{
+    position: relative;
+    color: #000000;
+    font-weight: bold;
+    font-size: 15px;
+    width: 100%;
+    top: 150%;
+    padding: 0% 20% 25% 20%;
+}
+
+.btn-ingresos-pedidos{
+    position: absolute;
+    background-color:#715cf8;
+    border-radius: 25px;
+    font-weight: bold;
+    top: 85%;
+    left: 20%;
+    z-index: 2;
+    width: 60%;
+    height: 5%;
+    color: #000000;
+    border: 0.5px solid black;
+}

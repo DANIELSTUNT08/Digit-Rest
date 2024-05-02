@@ -1,0 +1,17 @@
+pantalla ingresar/registrarse 
+select * from usuario where correoUsuario=? and contraseña=?
+select * from usuario where correoUsusario=?
+insert into usuario (nombreUsuario,idRol,correoUsuario,contraseña) values (?,?,?,?)
+
+pantalla menu
+select * from platos
+
+plato
+select * from platos where idPlato=?
+
+pantalla pedidos
+select * from pedido
+
+pedido 
+select * from pedido where idPedido=?
+	select * from Pedido-Platos where idPlato=? and cantidad=? personalizaion=?
